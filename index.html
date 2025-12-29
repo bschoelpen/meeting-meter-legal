@@ -106,6 +106,7 @@
         .feature-item h3 { font-size: 1.2rem; }
         .icon { font-size: 2rem; margin-bottom: 10px; display: block; }
 
+
         /* --- PRICING / NO SUBSCRIPTION --- */
         .pricing { padding: 80px 0; text-align: center; }
         .pricing-box { 
@@ -116,6 +117,56 @@
             max-width: 500px;
         }
         .pricing h2 { color: var(--accent-color); }
+
+        /* --- COMPARISON TABLE --- */
+        .comparison { padding: 60px 0; background-color: var(--bg-color); text-align: center; }
+        .comparison h2 { margin-bottom: 10px; }
+        
+        .comparison-table-wrapper {
+            overflow-x: auto; /* WICHTIG: Macht Tabelle auf Handy wischbar */
+            margin-top: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #e5e5e5;
+            display: inline-block;
+            width: 100%;
+            max-width: 800px;
+        }
+        @media (prefers-color-scheme: dark) { .comparison-table-wrapper { border-color: #333; box-shadow: none; background: #1c1c1e; } }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px; /* Erzwingt Breite, damit man auf Handy scrollt */
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+            text-align: left; /* Das macht alles schön linksbündig */
+        }
+        @media (prefers-color-scheme: dark) { .comparison-table th, .comparison-table td { border-color: #333; } }
+
+        /* Spalten-Design */
+        .comparison-table th { font-size: 1.1rem; }
+        .sub-header { font-size: 0.8rem; font-weight: 400; opacity: 0.7; display: block; margin-top: 5px; }
+        
+        .competitor-col { background-color: #f9f9f9; color: #666; }
+        .us-col { background-color: rgba(0, 122, 255, 0.05); color: var(--accent-color); font-weight: 700; border-bottom: 2px solid var(--accent-color) !important; }
+
+        @media (prefers-color-scheme: dark) { 
+            .competitor-col { background-color: #2c2c2e; color: #888; }
+            .us-col { background-color: rgba(10, 132, 255, 0.1); }
+        }
+
+        /* Zellen-Inhalt */
+        .small-text { font-size: 0.8rem; display: block; margin-top: 4px; opacity: 0.8; font-weight: normal; }
+        .positive { color: #28cd41; } /* Apple Green */
+        .negative { color: #ff3b30; } /* Apple Red */
+        
+        /* Letzte Zeile ohne Border */
+        .comparison-table tr:last-child td { border-bottom: none; }
 
         /* --- FOOTER --- */
         footer { padding: 50px 0; text-align: center; font-size: 0.9rem; border-top: 1px solid #333; }
@@ -173,6 +224,47 @@
                     <h3>Überall dabei</h3>
                     <p>Optimiert für iPhone, iPad und Apple Silicon Macs. Starten Sie den Timer direkt am Desktop.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison">
+        <div class="container">
+            <h2>Warum Meeting Meter?</h2>
+            <p class="lead">Der faire Unterschied.</p>
+            
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;"></th>
+                            <th class="competitor-col">🐢 Andere Tracker<br><span class="sub-header">(Toggl, Clockify etc.)</span></th>
+                            <th class="us-col">🚀 Meeting Meter<br><span class="sub-header"></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Kosten</strong></td>
+                            <td class="negative">❌ ~140 € / Jahr<br><span class="small-text">(Abo-Modell)</span></td>
+                            <td class="positive">✅Einmalig 9,99 €<br><span class="small-text">(Lifetime License)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Datenschutz</strong></td>
+                            <td class="negative">❌ Cloud & Tracking<br><span class="small-text">(Firmendaten im Netz)</span></td>
+                            <td class="positive">✅ 100% Lokal<br><span class="small-text">(Alles auf deinem Gerät)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fokus</strong></td>
+                            <td class="neutral">➖ Verwaltung & Timesheets</td>
+                            <td class="positive">✅ Echtzeit Kosten-Bewusstsein</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vibe</strong></td>
+                            <td class="neutral">➖ Buchhaltung</td>
+                            <td class="positive">✅ Geld sparen</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
