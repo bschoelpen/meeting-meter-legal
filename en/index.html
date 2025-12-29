@@ -1,27 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meeting Meter - Stopp die Geldverbrennung</title>
-
-    <script>
-        // Prüfen, ob der User Englisch als Browsersprache hat
-        var userLang = navigator.language || navigator.userLanguage; 
-        
-        // Prüfen, ob wir nicht schon im Englischen sind (um Loops zu vermeiden)
-        // und ob der User nicht manuell "Deutsch" gewählt hat (sessionStorage Trick optional)
-        if (userLang.startsWith('en')) {
-            // Wenn Englisch erkannt wird -> Weiterleitung in den en-Ordner
-            // Aber nur, wenn der User nicht explizit zurückgeklickt hat (Fortgeschritten).
-            // Für den Anfang reicht eine simple Weiterleitung:
-            if (!sessionStorage.getItem('manualLanguageSwitch')) {
-                window.location.href = 'en/index.html';
-            }
-        }
-    </script>
-
-    <meta name="description" content="Der Echtzeit-Kostenrechner für Meetings. Keine Abos, keine Cloud. Für iPhone, iPad und Mac.">
+    <meta name="description" content="The real-time cost calculator for meetings. No subscriptions, no cloud. For iPhone, iPad, and Mac.">
     
     <style>
         /* --- CSS VARIABLES & RESET --- */
@@ -241,31 +224,31 @@
 <body>
     <!-- Manual Language Switcher -->
     <div style="position: absolute; top: 20px; right: 20px; z-index: 1000;">
-        <span style="font-weight: bold;">DE</span> | <a href="en/index.html" style="text-decoration: none; color: inherit; opacity: 0.6;">EN</a>
+        <a href="../index.html" onclick="sessionStorage.setItem('manualLanguageSwitch', 'true')" style="text-decoration: none; color: inherit; opacity: 0.6;">DE</a> | <span style="font-weight: bold;">EN</span>
     </div>
 
     <section class="hero">
         <div class="container">
-            <h1>Stopp die Geldverbrennung.</h1>
-            <p class="lead">Sehen Sie in Echtzeit, was Ihre Meetings wirklich kosten. <br>Der faire Timer ohne Abo-Zwang.</p>
+            <h1>Stop Burning Money.</h1>
+            <p class="lead">See exactly what your meetings cost in real-time.<br>The fair timer. No subscription.</p>
             
             <div class="badge-container">
-                <a href="#" target="_blank" aria-label="Laden im App Store">
+                <a href="#" target="_blank" aria-label="Download on the App Store">
                     <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/de-de?size=250x83" 
-                         alt="Laden im App Store" 
+                         alt="Download on the App Store" 
                          class="store-badge apple-badge">
                 </a>
 
-                <a href="#" target="_blank" aria-label="Jetzt bei Google Play">
+                <a href="#" target="_blank" aria-label="Get it on Google Play">
                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png" 
-                         alt="Jetzt bei Google Play" 
+                         alt="Get it on Google Play" 
                          class="store-badge google-badge">
                 </a>
             </div>
 
             <br>
             
-            <img src="assets/main-app-screenshot.png" alt="Meeting Meter App Screenshot" class="hero-image">
+            <img src="../assets/main-app-screenshot.png" alt="Meeting Meter App Screenshot" class="hero-image">
         </div>
     </section>
 
@@ -274,18 +257,18 @@
             <div class="feature-grid">
                 <div class="feature-item">
                     <span class="icon">💸</span>
-                    <h3>Echtzeit-Kosten</h3>
-                    <p>Beobachten Sie live, wie der Betrag steigt. Nichts fördert Disziplin mehr als sichtbare Kosten.</p>
+                    <h3>Real-Time-Costs</h3>
+                    <p>Watch the amount increase live. Nothing promotes discipline more than visible costs.</p>
                 </div>
                 <div class="feature-item">
                     <span class="icon">🔒</span>
-                    <h3>Datenschutz First</h3>
-                    <p>Keine Cloud, kein Tracking. Ihre Stundensätze und Teilnehmer bleiben zu 100% auf Ihrem Gerät.</p>
+                    <h3>Privacy First</h3>
+                    <p>No cloud, no tracking. Your hourly rates and participants stay 100% on your device.</p>
                 </div>
                 <div class="feature-item">
                     <span class="icon">📱</span>
-                    <h3>Überall dabei</h3>
-                    <p>Optimiert für iPhone, iPad und Apple Silicon Macs. Starten Sie den Timer direkt am Desktop.</p>
+                    <h3>Present Everywhere</h3>
+                    <p>Optimized for iPhone, iPad and Apple Silicon Macs. Start the timer directly from your desktop.</p>
                 </div>
             </div>
         </div>
@@ -293,38 +276,38 @@
 
     <section class="comparison">
         <div class="container">
-            <h2>Warum Meeting Meter?</h2>
-            <p class="lead">Der faire Unterschied.</p>
+            <h2>Why Meeting Meter?</h2>
+            <p class="lead">The fair difference.</p>
             
             <div class="comparison-table-wrapper">
                 <table class="comparison-table">
                     <thead>
                         <tr>
                             <th style="text-align: left;"></th>
-                            <th class="competitor-col">🐢 Andere Tracker<br><span class="sub-header">(Toggl, Clockify etc.)</span></th>
+                            <th class="competitor-col">🐢 Other Trackers<br><span class="sub-header">(Toggl, Clockify etc.)</span></th>
                             <th class="us-col">🚀 Meeting Meter<br><span class="sub-header"></span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Kosten</strong></td>
-                            <td class="negative">❌ ~140 € / Jahr<br><span class="small-text">(Abo-Modell)</span></td>
-                            <td class="positive">✅ Einmalig 9,99 €<br><span class="small-text">(Lifetime License)</span></td>
+                            <td><strong>Costs</strong></td>
+                            <td class="negative">❌ ~140 € / Year<br><span class="small-text">(Subscription Model)</span></td>
+                            <td class="positive">✅ One-time 9,99 €<br><span class="small-text">(Lifetime License)</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Datenschutz</strong></td>
-                            <td class="negative">❌ Cloud & Tracking<br><span class="small-text">(Firmendaten im Netz)</span></td>
-                            <td class="positive">✅ 100% Lokal<br><span class="small-text">(Alles auf deinem Gerät)</span></td>
+                            <td><strong>Privacy</strong></td>
+                            <td class="negative">❌ Cloud & Tracking<br><span class="small-text">(Company data in the cloud)</span></td>
+                            <td class="positive">✅ 100% Local<br><span class="small-text">(Everything on your device)</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Fokus</strong></td>
-                            <td class="neutral">➖ Verwaltung & Timesheets</td>
-                            <td class="positive">✅ Echtzeit Kosten-Bewusstsein</td>
+                            <td><strong>Focus</strong></td>
+                            <td class="neutral">➖ Management & Timesheets</td>
+                            <td class="positive">✅ Real-time Cost Awareness</td>
                         </tr>
                         <tr>
                             <td><strong>Vibe</strong></td>
-                            <td class="neutral">➖ Buchhaltung</td>
-                            <td class="positive">✅ Geld sparen</td>
+                            <td class="neutral">➖ Accounting</td>
+                            <td class="positive">✅ Saving Money</td>
                         </tr>
                     </tbody>
                 </table>
@@ -335,10 +318,10 @@
     <section class="pricing">
         <div class="container">
             <div class="pricing-box">
-                <h2>🚫 Kein Abo, keine versteckten Kosten.</h2>
-                <p>Andere Time-Tracker verlangen monatliche Gebühren. <br>Wir nicht.</p>
-                <p><strong>Einmal zahlen. Für immer nutzen.</strong></p>
-                <p style="margin-top: 20px; font-size: 0.9em;">Faires Freemium Modell verfügbar.</p>
+                <h2>🚫 No subscriptions, no hidden costs.</h2>
+                <p>Other time trackers charge monthly fees. <br>We don't.</p>
+                <p><strong>Pay once. Use forever.</strong></p>
+                <p style="margin-top: 20px; font-size: 0.9em;">Fair freemium model available.</p>
             </div>
         </div>
     </section>
@@ -347,9 +330,9 @@
         <div class="container">
             <p>&copy; 2025 Meeting Meter. Made in Germany.</p>
             <p>
-                <a href="https://bschoelpen.github.io/meeting-meter-legal/imprint.html">Impressum</a> |
-                <a href="https://bschoelpen.github.io/meeting-meter-legal/privacy.html">Datenschutzerklärung</a> | 
-                <a href="mailto:bschoelpen@web.de">Support & Kontakt</a>
+                <a href="https://bschoelpen.github.io/meeting-meter-legal/imprint.html">Imprint</a> |
+                <a href="https://bschoelpen.github.io/meeting-meter-legal/privacy.html">Privacy</a> | 
+                <a href="mailto:bschoelpen@web.de">Support & Contact</a>
 
             </p>
         </div>
