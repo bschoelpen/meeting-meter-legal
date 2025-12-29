@@ -177,6 +177,35 @@
         @media (max-width: 600px) {
             .hero h1 { font-size: 2.2rem; }
         }
+
+        /* --- MOBILE OPTIMIERUNG FÜR TABELLE --- */
+        @media (max-width: 600px) {
+            /* 1. Scroll-Zwang aufheben, damit es versucht, reinzupassen */
+            .comparison-table {
+                min-width: auto; 
+                width: 100%;
+            }
+
+            /* 2. Platz sparen: Weniger Innenabstand & kleinere Schrift */
+            .comparison-table th, .comparison-table td {
+                padding: 12px 4px; /* Oben/Unten 12px, Links/Rechts nur 4px */
+                font-size: 0.85rem; /* Etwas kleinerer Text */
+            }
+
+            /* 3. Die erste Spalte ("Feature") darf schmaler sein */
+            .comparison-table th:first-child,
+            .comparison-table td:first-child {
+                width: 20%;      /* Nimmt weniger Platz ein */
+                font-size: 0.8rem; /* Label darf kleiner sein */
+                font-weight: bold;
+            }
+            
+            /* 4. Sub-Header (Erklärungstext) noch kleiner */
+            .sub-header, .small-text {
+                font-size: 0.7rem;
+                line-height: 1.2;
+            }
+        }
     </style>
 </head>
 <body>
@@ -246,7 +275,7 @@
                         <tr>
                             <td><strong>Kosten</strong></td>
                             <td class="negative">❌ ~140 € / Jahr<br><span class="small-text">(Abo-Modell)</span></td>
-                            <td class="positive">✅Einmalig 9,99 €<br><span class="small-text">(Lifetime License)</span></td>
+                            <td class="positive">✅ Einmalig 9,99 €<br><span class="small-text">(Lifetime License)</span></td>
                         </tr>
                         <tr>
                             <td><strong>Datenschutz</strong></td>
