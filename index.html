@@ -143,6 +143,7 @@
         .comparison-table th, .comparison-table td {
             padding: 20px;
             border-bottom: 1px solid #eee;
+            border-right: 1px solid #eee;
             vertical-align: middle;
             text-align: left; /* Das macht alles schön linksbündig */
         }
@@ -173,20 +174,32 @@
         footer a { color: var(--text-color); text-decoration: none; margin: 0 10px; }
         footer a:hover { text-decoration: underline; }
 
-        /* Responsive */
+        /* --- OPTIMIERUNG FÜR MOBILE DEVICES --- */
         @media (max-width: 600px) {
-            .hero h1 { font-size: 2.2rem; }
-        }
+             .hero h1 { font-size: 2.2rem; }
 
-        /* --- MOBILE OPTIMIERUNG FÜR TABELLE --- */
-        @media (max-width: 600px) {
             /* 1. Scroll-Zwang aufheben, damit es versucht, reinzupassen */
             .comparison-table {
                 min-width: auto; 
                 width: 100%;
+                border-collapse: separate; 
+                border-spacing: 0;
             }
 
-            /* 2. Platz sparen: Weniger Innenabstand & kleinere Schrift */
+            /* Grauen Hintergrund der Konkurrenz entfernen (sieht sauberer aus) */
+            .competitor-col {
+                background-color: transparent !important;
+                color: #999; /* Text etwas heller machen, damit er unwichtiger wirkt */
+            }
+
+            /* Deine Spalte als "Highlight-Pill" gestalten */
+            .us-col {
+                background-color: rgba(0, 122, 255, 0.08) !important; /* Leichtes Blau */
+                border-left: 1px solid rgba(0, 122, 255, 0.1);
+                border-right: 1px solid rgba(0, 122, 255, 0.1);
+            }
+
+            /* Platz sparen: Weniger Innenabstand & kleinere Schrift */
             .comparison-table th, .comparison-table td {
                 padding: 12px 4px; /* Oben/Unten 12px, Links/Rechts nur 4px */
                 font-size: 0.85rem; /* Etwas kleinerer Text */
