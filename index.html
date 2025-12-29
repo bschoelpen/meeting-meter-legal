@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Meter - Stopp die Geldverbrennung</title>
+    <meta name="description" content="Der Echtzeit-Kostenrechner für Meetings. Keine Abos, keine Cloud. Für iPhone, iPad und Mac.">
+    
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1d1d1f;
+            --accent-color: #007aff; /* Apple Blue */
+            --secondary-bg: #f5f5f7;
+            --max-width: 980px;
+        }
+
+        /* Dark Mode Support (optional, wirkt pro bei Devs) */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #000000;
+                --text-color: #f5f5f7;
+                --secondary-bg: #1c1c1e;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5em; }
+        p { color: #86868b; margin-bottom: 1.5em; }
+        @media (prefers-color-scheme: dark) { p { color: #a1a1a6; } }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+        
+        /* --- HERO SECTION --- */
+        .hero {
+            text-align: center;
+            padding: 100px 0 60px;
+        }
+        .hero h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero p.lead { font-size: 1.3rem; max-width: 600px; margin: 0 auto 40px; }
+        .hero-image {
+            margin-top: 50px;
+            width: 100%;
+            max-width: 300px; /* Breite des iPhones */
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            /* Platzhalter-Rahmen, falls kein Bild da ist */
+            border: 1px solid #333; 
+            min-height: 600px; 
+            background: #1c1c1e; display: inline-block;
+        }
+
+        /* --- BUTTONS --- */
+        .app-store-button {
+            display: inline-block;
+            background-color: #000;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        @media (prefers-color-scheme: dark) { .app-store-button { background-color: #fff; color: #000; } }
+        .app-store-button:hover { transform: scale(1.05); }
+
+        /* --- FEATURES --- */
+        .features { background-color: var(--secondary-bg); padding: 80px 0; margin-top: 60px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; }
+        .feature-item h3 { font-size: 1.2rem; }
+        .icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+
+        /* --- PRICING / NO SUBSCRIPTION --- */
+        .pricing { padding: 80px 0; text-align: center; }
+        .pricing-box { 
+            border: 2px solid var(--accent-color); 
+            border-radius: 20px; 
+            padding: 40px; 
+            display: inline-block; 
+            max-width: 500px;
+        }
+        .pricing h2 { color: var(--accent-color); }
+
+        /* --- FOOTER --- */
+        footer { padding: 50px 0; text-align: center; font-size: 0.9rem; border-top: 1px solid #333; }
+        footer a { color: var(--text-color); text-decoration: none; margin: 0 10px; }
+        footer a:hover { text-decoration: underline; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Stopp die Geldverbrennung.</h1>
+            <p class="lead">Sehen Sie in Echtzeit, was Ihre Meetings wirklich kosten. <br>Der faire Timer ohne Abo-Zwang.</p>
+            
+            <a href="#" class="app-store-button">
+                Laden im App Store
+            </a>
+
+            <br>
+            
+            <img src="assets/app-screenshot.png" alt="Meeting Meter App Screenshot" class="hero-image">
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="icon">💸</span>
+                    <h3>Echtzeit-Kosten</h3>
+                    <p>Beobachten Sie live, wie der Betrag steigt. Nichts fördert Disziplin mehr als sichtbare Kosten.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🔒</span>
+                    <h3>Datenschutz First</h3>
+                    <p>Keine Cloud, kein Tracking. Ihre Stundensätze und Teilnehmer bleiben zu 100% auf Ihrem Gerät.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">📱</span>
+                    <h3>Überall dabei</h3>
+                    <p>Optimiert für iPhone, iPad und Apple Silicon Macs. Starten Sie den Timer direkt am Desktop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-box">
+                <h2>🚫 Kein Abo, keine versteckten Kosten.</h2>
+                <p>Andere Time-Tracker verlangen monatliche Gebühren. <br>Wir nicht.</p>
+                <p><strong>Einmal zahlen. Für immer nutzen.</strong></p>
+                <p style="margin-top: 20px; font-size: 0.9em;">Faires Freemium Modell verfügbar.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Meeting Meter. Made in Germany.</p>
+            <p>
+                <a href="https://bschoelpen.github.io/meeting-meter-legal/imprint.html">Impressum</a> | 
+                <a href="mailto:bschoelpen@web.de">Support & Kontakt</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
